@@ -6,11 +6,13 @@ ScriptHookVDotNet Extender is a work in progress developper library adding funct
 
 [Camera](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Camera.md)
 ---
-enum ScreenEffect  
-Camera.Fade(int, int)  
-Camera.StartScreenEffect(SE.ScreenEffect)  
-Camera.StopScreenEffect(SE.ScreenEffect)  
-Camera.StopAllScreenEffect()  
+``
+enum ScreenEffect
+Camera.Fade(int, int)
+Camera.StartScreenEffect(SE.ScreenEffect)
+Camera.StopScreenEffect(SE.ScreenEffect)
+Camera.StopAllScreenEffect()
+``
 
 [Control](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Control.md)
 ---
