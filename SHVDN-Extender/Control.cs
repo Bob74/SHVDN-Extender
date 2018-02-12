@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace SE
 {
-    class Control
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class Control
     {
     }
 
+    /// <summary>
+    /// Contains the different control's input groups.
+    /// </summary>
     public enum InputGroups
     {
         Move,

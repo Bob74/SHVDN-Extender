@@ -4,7 +4,10 @@ using GTA.Native;
 
 namespace SE
 {
-    class Script
+    /// <summary>
+    /// Dealing with game's scripts.
+    /// </summary>
+    public static class Script
     {
         /// <summary>
         /// Start a script.

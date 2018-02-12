@@ -4,7 +4,10 @@ using GTA.Native;
 
 namespace SE
 {
-    static class Phone
+    /// <summary>
+    /// In game phone related functions.
+    /// </summary>
+    public static class Phone
     {
         /// <summary>
         /// Remove the phone content displayed on screen.

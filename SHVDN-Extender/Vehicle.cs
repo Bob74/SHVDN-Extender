@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 
 using GTA;
 using GTA.Native;
@@ -11,7 +7,28 @@ using GTA.Math;
 
 namespace SE
 {
-    class Vehicle
+    /// <summary>
+    /// Contains the different vehicle's wheels.
+    /// </summary>
+    public enum Wheel
+    {
+        None = -1,
+        FrontLeft,              // bike, plane or jet front left
+        FrontRight,             //
+        MiddleLeft,             // 4/6 wheels trailers, plane or jet is first one on left
+        MiddleRight,            // 4/6 wheels trailers, plane or jet is first one on right
+        RearLeft,               // bike rear / 4/6 wheels trailer, plane or jet is last one on left
+        RearRight,              // 4/6 wheels trailer, plane or jet is last one on right
+        MiddleLeft6_2 = 45,     // 6 wheels trailer mid wheel left (according to Native DB)
+        MiddleRight6_2 = 47,    // 6 wheels trailer mid wheel right (according to Native DB)
+        MiddleLeft6 = 252,      // 6 wheels trailer mid wheel left (tested in 1290)
+        MiddleRight6 = 256      // 6 wheels trailer mid wheel right (tested in 1290)
+    }
+
+    /// <summary>
+    /// Vehicles informations and functions.
+    /// </summary>
+    public static class Vehicle
     {
         /// <summary>
         /// Get the bone's name from the wheel.
@@ -34,7 +51,7 @@ namespace SE
         /// Generate a random number plate.
         /// GTA V number plate format: 00AAA000
         /// </summary>
-        /// <returns>Returns a random plate number</returns>
+        /// <returns>Random plate number</returns>
         public static string GetRandomNumberPlate()
         {
             int num = 0;
@@ -60,7 +77,7 @@ namespace SE
         /// Translate the model hash into its real name.
         /// </summary>
         /// <param name="veh">Vehicle</param>
-        /// <returns></returns>
+        /// <returns>Vehicle model name</returns>
         public static string GetModelName(GTA.Vehicle veh)
         {
             string model = Function.Call<string>(Hash.GET_DISPLAY_NAME_FROM_VEHICLE_MODEL, veh.Model.Hash);
@@ -70,7 +87,7 @@ namespace SE
         /// Translate the model hash into its real name.
         /// </summary>
         /// <param name="hash">Hash of the vehicle</param>
-        /// <returns></returns>
+        /// <returns>Vehicle model name</returns>
         public static string GetModelName(VehicleHash hash)
         {
             string model = Function.Call<string>(Hash.GET_DISPLAY_NAME_FROM_VEHICLE_MODEL, (int)hash);
@@ -79,11 +96,10 @@ namespace SE
 
         /// <summary>
         /// Returns a comprehensive name for the vehicle.
-        /// [Model of the vehicle] - [Plate's number] ([Class name of the vehicle])
         /// </summary>
         /// <param name="veh">Vehicle</param>
         /// <param name="showClassName">Set to true to show the class name</param>
-        /// <returns></returns>
+        /// <returns>[Model of the vehicle] - [Plate's number] ([Class name of the vehicle])</returns>
         public static string GetVehicleFriendlyName(GTA.Vehicle veh, bool showClassName = true)
         {
             string friendlyname = "";
@@ -106,7 +122,7 @@ namespace SE
         /// Check if the vehicle is the player "official" vehicle (the one with the colored blip).
         /// </summary>
         /// <param name="veh">Vehicle to check</param>
-        /// <returns></returns>
+        /// <returns>True if the vehicle is an official player vehicle</returns>
         public static bool IsPlayerOfficialVehicle(GTA.Vehicle veh)
         {
             // Michael
@@ -133,7 +149,7 @@ namespace SE
         /// <param name="coordinates">Position of the new vehicle</param>
         /// <param name="heading">Heading of the new vehicle</param>
         /// <param name="oldVeh">Vehicle to copy</param>
-        /// <returns></returns>
+        /// <returns>New vehicle handle</returns>
         public static GTA.Vehicle SpawnCopyVehicle(Vector3 coordinates, float heading, GTA.Vehicle oldVeh)
         {
             GTA.Vehicle veh = GTA.World.CreateVehicle(oldVeh.Model, coordinates, heading);
@@ -205,7 +221,7 @@ namespace SE
                 
                 // Liveries
                 veh.Livery = oldVeh.Livery;
-                _SET_VEHICLE_LIVERY2(veh, _GET_VEHICLE_LIVERY2(oldVeh));
+                SetVehicleLivery2(veh, GetVehicleLivery2(oldVeh));
 
                 // Misc
                 veh.NeedsToBeHotwired = false;
@@ -225,8 +241,8 @@ namespace SE
         /// Livery2 know usage is the roof of the TORNADO5 (Benny's custom)
         /// </summary>
         /// <param name="veh">Vehicle</param>
-        /// <returns></returns>
-        public static int _GET_VEHICLE_LIVERY2_COUNT(GTA.Vehicle veh)
+        /// <returns>Number of livery</returns>
+        public static int GetVehicleLivery2Count(GTA.Vehicle veh)
         {
             return Function.Call<int>((Hash)0x5ECB40269053C0D4, veh);
         }
@@ -236,38 +252,22 @@ namespace SE
         /// Livery2 know usage is the roof of the TORNADO5 (Benny's custom)
         /// </summary>
         /// <param name="veh">Vehicle</param>
-        /// <returns></returns>
-        public static int _GET_VEHICLE_LIVERY2(GTA.Vehicle veh)
+        /// <returns>Current livery</returns>
+        public static int GetVehicleLivery2(GTA.Vehicle veh)
         {
             return Function.Call<int>((Hash)0x60190048C0764A26, veh);
         }
 
         /// <summary>
         /// Set the current index of livery2 for the vehicle.
-        /// Livery2 know usage is the roof of the TORNADO5 (Benny's custom)
+        /// Livery2 known usage is the roof of the TORNADO5 (Benny's custom)
         /// </summary>
         /// <param name="veh">Vehicle</param>
         /// <param name="liveryNumber">Livery ID to set to the vehicle</param>
-        public static void _SET_VEHICLE_LIVERY2(GTA.Vehicle veh, int liveryNumber)
+        public static void SetVehicleLivery2(GTA.Vehicle veh, int liveryNumber)
         {
             Function.Call((Hash)0xA6D3A8750DC73270, veh, liveryNumber);
         }
 
     }
-
-    public enum Wheel
-    {
-        None = -1,
-        FrontLeft,              // bike, plane or jet front left
-        FrontRight,             //
-        MiddleLeft,             // 4/6 wheels trailers, plane or jet is first one on left
-        MiddleRight,            // 4/6 wheels trailers, plane or jet is first one on right
-        RearLeft,               // bike rear / 4/6 wheels trailer, plane or jet is last one on left
-        RearRight,              // 4/6 wheels trailer, plane or jet is last one on right
-        MiddleLeft6_2 = 45,     // 6 wheels trailer mid wheel left (according to Native DB)
-        MiddleRight6_2 = 47,    // 6 wheels trailer mid wheel right (according to Native DB)
-        MiddleLeft6 = 252,      // 6 wheels trailer mid wheel left (tested in 1290)
-        MiddleRight6 = 256      // 6 wheels trailer mid wheel right (tested in 1290)
-    }
-
 }

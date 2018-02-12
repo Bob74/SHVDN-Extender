@@ -5,7 +5,10 @@ using GTA.Native;
 
 namespace SE
 {
-    class UI
+    /// <summary>
+    /// Displaying things on screen (text, textures, etc.).
+    /// </summary>
+    public static class UI
     {
         /// <summary>
         /// Wait the duration time and hide the ui.

@@ -70,6 +70,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Control.cs" />
     <Compile Include="Extender.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,4 +90,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\PxtlCa.XmlCommentMarkDownGenerator.0.2.6270.2853\build\PxtlCa.XmlCommentMarkDownGenerator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PxtlCa.XmlCommentMarkDownGenerator.0.2.6270.2853\build\PxtlCa.XmlCommentMarkDownGenerator.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>COPY "$(TargetPath)" "C:\Program Files\Rockstar Games\Grand Theft Auto V\scripts"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

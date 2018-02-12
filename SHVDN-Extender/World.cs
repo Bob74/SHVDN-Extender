@@ -7,7 +7,10 @@ using GTA.Math;
 
 namespace SE
 {
-    class World
+    /// <summary>
+    /// Creating stuff in the game's world.
+    /// </summary>
+    public static class World
     {
         /// <summary>
         /// Loads an IPL file.

@@ -4,7 +4,10 @@ using GTA.Native;
 
 namespace SE
 {
-    class Player
+    /// <summary>
+    /// Dealing with the current player.
+    /// </summary>
+    public static class Player
     {
         /// <summary>
         /// Return the current Ped type.

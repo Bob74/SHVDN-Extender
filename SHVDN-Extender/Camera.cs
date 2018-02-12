@@ -37,7 +37,10 @@ using GTA.Native;
 
 namespace SE
 {
-    class Camera
+    /// <summary>
+    /// Camera and screen effects functions.
+    /// </summary>
+    public static class Camera
     {
         /// <summary>
         /// Fade the screen (fade out + fade in).
