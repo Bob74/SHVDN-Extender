@@ -1,12 +1,16 @@
 # World #
 
+Creating stuff in the game's world. 
+
+---
+
 #### Method SE.World.RequestIpl(System.String)
 
  Loads an IPL file. 
 
 |Name | Description |
 |-----|------|
-|ipl: |IPL to load|
+|ipl |IPL to load|
 
 
 ---
@@ -16,7 +20,7 @@
 
 |Name | Description |
 |-----|------|
-|pos: |Position of the marker|
+|pos |Position of the marker|
 
 
 ---
@@ -26,8 +30,8 @@
 
 |Name | Description |
 |-----|------|
-|pos: |Position of the marker|
-|color: |Color of the marker|
+|pos |Position of the marker|
+|color |Color of the marker|
 
 
 ---
@@ -37,9 +41,9 @@
 
 |Name | Description |
 |-----|------|
-|pos: |Position of the marker|
-|marker: |Type of marker|
-|scale: |Scale of the marker|
+|pos |Position of the marker|
+|marker |Type of marker|
+|scale |Scale of the marker|
 
 
 ---
@@ -49,7 +53,7 @@
 
 |Name | Description |
 |-----|------|
-|pos: |Position of the marker|
-|marker: |Type of marker|
-|scale: |Scale of the marker|
-|color: |Color of the marker|
+|pos |Position of the marker|
+|marker |Type of marker|
+|scale |Scale of the marker|
+|color |Color of the marker|
