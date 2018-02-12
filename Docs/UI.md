@@ -1,12 +1,16 @@
 # UI #
 
+Displaying things on screen (text, textures, etc.). 
+
+---
+
 #### Method SE.UI.WaitAndhideUI(System.Int32)
 
  Wait the duration time and hide the ui. 
 
 |Name | Description |
 |-----|------|
-|duration: ||
+|duration ||
 
 
 ---
@@ -16,7 +20,7 @@
 
 |Name | Description |
 |-----|------|
-|text: ||
+|text ||
 
 
 ---
@@ -26,8 +30,8 @@
 
 |Name | Description |
 |-----|------|
-|text: ||
-|sound: |Emit notification sound (disable by default)|
+|text ||
+|sound |Emit notification sound (disable by default)|
 
 
 ---
@@ -37,11 +41,11 @@
 
 |Name | Description |
 |-----|------|
-|picture: ||
-|title: ||
-|subtitle: ||
-|message: ||
-|sound: |Emit notification sound (enable by default)|
+|picture ||
+|title ||
+|subtitle ||
+|message ||
+|sound |Emit notification sound (enable by default)|
 
 
 ---
@@ -51,16 +55,16 @@
 
 |Name | Description |
 |-----|------|
-|text: ||
-|font: ||
-|centre: ||
-|x: ||
-|y: ||
-|scale: ||
-|r: ||
-|g: ||
-|b: ||
-|a: ||
+|text ||
+|font ||
+|centre ||
+|x ||
+|y ||
+|scale ||
+|r ||
+|g ||
+|b ||
+|a ||
 
 
 ---
@@ -70,13 +74,13 @@
 
 |Name | Description |
 |-----|------|
-|fileName: ||
-|time: ||
-|x: ||
-|y: ||
-|centre: ||
-|index: ||
-|level: ||
+|fileName ||
+|time ||
+|x ||
+|y ||
+|centre ||
+|index ||
+|level ||
 
 
 ---
@@ -86,14 +90,14 @@
 
 |Name | Description |
 |-----|------|
-|fileName: ||
-|time: ||
-|x: ||
-|y: ||
-|color: ||
-|centre: ||
-|index: ||
-|level: ||
+|fileName ||
+|time ||
+|x ||
+|y ||
+|color ||
+|centre ||
+|index ||
+|level ||
 
 
 ---
@@ -103,8 +107,8 @@
 
 |Name | Description |
 |-----|------|
-|sprite: ||
-|x: ||
-|y: ||
-|centre: ||
-**Returns**:
+|sprite ||
+|x ||
+|y ||
+|centre ||
+**Returns**: 
