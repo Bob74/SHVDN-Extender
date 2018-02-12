@@ -1,13 +1,17 @@
 # Script #
 
+Dealing with game's scripts.
+
+---
+
 #### Method SE.Script.StartScript(System.String,System.Int32)
 
  Start a script. 
 
 |Name | Description |
 |-----|------|
-|scriptName: |Script's name|
-|buffer: |Size of the script buffer|
+|scriptName |Script's name|
+|buffer |Size of the script buffer|
 
 
 ---
@@ -17,4 +21,4 @@
 
 |Name | Description |
 |-----|------|
-|scriptName: |Script's name|
+|scriptName |Script's name|
