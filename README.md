@@ -7,76 +7,85 @@ ScriptHookVDotNet Extender is a work in progress developper library adding funct
 [Camera](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Camera.md)
 ---
 ```C#
-enum ScreenEffect
-Camera.Fade(int, int)
+Camera.Fade(System.Int32,System.Int32)
 Camera.StartScreenEffect(SE.ScreenEffect)
 Camera.StopScreenEffect(SE.ScreenEffect)
-Camera.StopAllScreenEffect()
+Camera.StopAllScreenEffect
 ```
+
+[ScreenEffect](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/ScreenEffect.md)
+---
+Enum containing all screen effects.
 
 [Control](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Control.md)
 ---
 ```C#
-enum InputGroups
 ```
+
+[InputGroups](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/InputGroups.md)
+---
+Enum containing control's input groups.
 
 [Phone](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Phone.md)
 ---
 ```C#
-Phone.DestroyPhone(int)
-Phone.GetPhoneSoundSet()
+Phone.DestroyPhone(System.Int32)
+Phone.GetPhoneSoundSet
 ```
 
 [Player](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Player.md)
 ---
 ```C#
-Player.GetCurrentCharacterID()
-Player.GetCurrentCharacterName(bool)
-Player.AddCashToPlayer(int)
+Player.GetCurrentCharacterID
+Player.GetCurrentCharacterName(System.Boolean)
+Player.AddCashToPlayer(System.Int32)
 ```
 
 [Script](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Script.md)
 ---
 ```C#
-Script.StartScript(string, int)
-Script.TerminateScript(string)
+Script.StartScript(System.String,System.Int32)
+Script.TerminateScript(System.String)
 ```
 
 [UI](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/UI.md)
 ---
 ```C#
-UI.WaitAndhideUI(int)
-UI.DisplayHelpTextThisFrame(string)
-UI.DrawNotification(string, bool)
-UI.DrawNotification(string, string, string, string, bool)
-UI.DrawText(string, int, bool, float, float, float, int, int, int, int)
-UI.DrawTexture(string, int, float, float, bool, int, int)
-UI.DrawTexture(string, int, float, float, System.Drawing.Color, bool, int, int)
-UI.GetSpriteCoordinatesFromFloat(System.Drawing.Image, float, float, bool)
+UI.WaitAndhideUI(System.Int32)
+UI.DisplayHelpTextThisFrame(System.String)
+UI.DrawNotification(System.String,System.Boolean)
+UI.DrawNotification(System.String,System.String,System.String,System.String,System.Boolean)
+UI.DrawText(System.String,System.Int32,System.Boolean,System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.Int32)
+UI.DrawTexture(System.String,System.Int32,System.Single,System.Single,System.Boolean,System.Int32,System.Int32)
+UI.DrawTexture(System.String,System.Int32,System.Single,System.Single,System.Drawing.Color,System.Boolean,System.Int32,System.Int32)
+UI.GetSpriteCoordinatesFromFloat(System.Drawing.Image,System.Single,System.Single,System.Boolean)
 ```
+
+[Wheel](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Wheel.md)
+---
+Enum containing all vehicles wheels.
 
 [Vehicle](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/Vehicle.md)
 ---
 ```C#
-enum Wheel
-Dictionary Vehicle.WheelsBones
-Vehicle.GetRandomNumberPlate()
+Vehicle.WheelsBones
+Vehicle.GetRandomNumberPlate
 Vehicle.GetModelName(GTA.Vehicle)
 Vehicle.GetModelName(GTA.Native.VehicleHash)
-Vehicle.GetVehicleFriendlyName(GTA.Vehicle, bool)
+Vehicle.GetVehicleFriendlyName(GTA.Vehicle,System.Boolean)
 Vehicle.IsPlayerOfficialVehicle(GTA.Vehicle)
-Vehicle.SpawnCopyVehicle(Vector3, float, GTA.Vehicle)
-Vehicle._GET_VEHICLE_LIVERY2_COUNT(GTA.Vehicle)
-Vehicle._GET_VEHICLE_LIVERY2(GTA.Vehicle)
-Vehicle._SET_VEHICLE_LIVERY2(GTA.Vehicle, int)
+Vehicle.SpawnCopyVehicle(GTA.Math.Vector3,System.Single,GTA.Vehicle)
+Vehicle.GetVehicleLivery2Count(GTA.Vehicle)
+Vehicle.GetVehicleLivery2(GTA.Vehicle)
+Vehicle.SetVehicleLivery2(GTA.Vehicle,System.Int32)
 ```
 
 [World](https://github.com/Bob74/SHVDN-Extender/blob/master/Docs/World.md)
 ---
 ```C#
-RequestIpl(string)
-DrawMarker(Vector3)
-DrawMarker(Vector3, System.Drawing.Color)
-DrawMarker(GTA.MarkerType, Vector3, Vector3)
-DrawMarker(GTA.MarkerType, Vector3, Vector3, System.Drawing.Color)
+World.RequestIpl(System.String)
+World.DrawMarker(GTA.Math.Vector3)
+World.DrawMarker(GTA.Math.Vector3,System.Drawing.Color)
+World.DrawMarker(GTA.MarkerType,GTA.Math.Vector3,GTA.Math.Vector3)
+World.DrawMarker(GTA.MarkerType,GTA.Math.Vector3,GTA.Math.Vector3,System.Drawing.Color)
 ```
