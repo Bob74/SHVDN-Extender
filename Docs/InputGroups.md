@@ -1,7 +1,8 @@
 ## InputGroups
 
- Enum containing the different control's input groups. 
+Enum containing the different control's input groups. 
  
+ ---
  ```C#
  public enum InputGroups
     {
