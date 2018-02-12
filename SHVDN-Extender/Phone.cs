@@ -21,7 +21,7 @@ namespace SE
         /// <summary>
         /// Return the name of the sound set of the current character's phone.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Name of the sound set</returns>
         public static string GetPhoneSoundSet()
         {
             switch ((uint)Game.Player.Character.Model.Hash)

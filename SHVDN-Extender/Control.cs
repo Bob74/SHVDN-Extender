@@ -14,7 +14,7 @@ namespace SE
     }
 
     /// <summary>
-    /// Contains the different control's input groups.
+    /// Enum containing the different control's input groups. 
     /// </summary>
     public enum InputGroups
     {
