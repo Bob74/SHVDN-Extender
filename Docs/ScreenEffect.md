@@ -1,8 +1,9 @@
 ## ScreenEffect
 
- Use the name of this enum. ie: SwitchHudIn.ToString() 
+Use the name of this enum. ie: SwitchHudIn.ToString() 
 
-```C#
+ ---
+ ```C#
     public enum ScreenEffect
     {
         SwitchHudIn,
