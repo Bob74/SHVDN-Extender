@@ -1,5 +1,9 @@
 # Camera #
 
+Camera and screen effects functions. 
+
+---
+
 #### Method SE.Camera.Fade(System.Int32,System.Int32)
 
  Fade the screen (fade out + fade in). 
