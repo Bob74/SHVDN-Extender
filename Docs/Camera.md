@@ -1,12 +1,13 @@
 # Camera #
 
 #### Method SE.Camera.Fade(System.Int32,System.Int32)
+
  Fade the screen (fade out + fade in). 
 
 |Name | Description |
 |-----|------|
-|fadeOutDuration: ||
-|fadeInDuration: ||
+|fadeOutDuration ||
+|fadeInDuration ||
 
 
 ---
@@ -16,7 +17,7 @@
 
 |Name | Description |
 |-----|------|
-|effect: ||
+|effect ||
 
 
 ---
@@ -26,17 +27,10 @@
 
 |Name | Description |
 |-----|------|
-|effect: ||
+|effect ||
 
 
 ---
 #### Method SE.Camera.StopAllScreenEffect
 
  Stop all screen effects. 
-
-
-
----
-## Type SE.ScreenEffect
-
- Use the name of the enum. ie: SwitchHudIn.ToString()
