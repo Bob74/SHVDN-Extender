@@ -1,5 +1,9 @@
 # Vehicle #
 
+Vehicles informations and functions. 
+
+---
+
 #### Field SE.Vehicle.WheelsBones
 
  Get the bone's name from the wheel. 
@@ -11,7 +15,7 @@
 
  Generate a random number plate. GTA V number plate format: 00AAA000 
 
-**Returns**: Returns a random plate number
+**Returns**: Random plate number
 
 
 
@@ -22,8 +26,8 @@
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle|
-**Returns**: 
+|veh |Vehicle|
+**Returns**: Vehicle model name
 
 
 
@@ -34,21 +38,21 @@
 
 |Name | Description |
 |-----|------|
-|hash: |Hash of the vehicle|
-**Returns**: 
+|hash |Hash of the vehicle|
+**Returns**: Vehicle model name
 
 
 
 ---
 #### Method SE.Vehicle.GetVehicleFriendlyName(GTA.Vehicle,System.Boolean)
 
- Returns a comprehensive name for the vehicle. [Model of the vehicle] - [Plate's number] ([Class name of the vehicle]) 
+ Returns a comprehensive name for the vehicle. 
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle|
-|showClassName: |Set to true to show the class name|
-**Returns**: 
+|veh |Vehicle|
+|showClassName |Set to true to show the class name|
+**Returns**: [Model of the vehicle] - [Plate's number] ([Class name of the vehicle])
 
 
 
@@ -59,8 +63,8 @@
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle to check|
-**Returns**: 
+|veh |Vehicle to check|
+**Returns**: True if the vehicle is an official player vehicle
 
 
 
@@ -71,43 +75,43 @@
 
 |Name | Description |
 |-----|------|
-|coordinates: |Position of the new vehicle|
-|heading: |Heading of the new vehicle|
-|oldVeh: |Vehicle to copy|
-**Returns**: 
+|coordinates |Position of the new vehicle|
+|heading |Heading of the new vehicle|
+|oldVeh |Vehicle to copy|
+**Returns**: New vehicle handle
 
 
 
 ---
-#### Method SE.Vehicle._GET_VEHICLE_LIVERY2_COUNT(GTA.Vehicle)
+#### Method SE.Vehicle.GetVehicleLivery2Count(GTA.Vehicle)
 
  Number of livery2 available for the vehicle. Livery2 know usage is the roof of the TORNADO5 (Benny's custom) 
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle|
-**Returns**: 
+|veh |Vehicle|
+**Returns**: Number of livery
 
 
 
 ---
-#### Method SE.Vehicle._GET_VEHICLE_LIVERY2(GTA.Vehicle)
+#### Method SE.Vehicle.GetVehicleLivery2(GTA.Vehicle)
 
  Get the current index of livery2 for the vehicle. Livery2 know usage is the roof of the TORNADO5 (Benny's custom) 
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle|
-**Returns**: 
+|veh |Vehicle|
+**Returns**: Current livery
 
 
 
 ---
-#### Method SE.Vehicle._SET_VEHICLE_LIVERY2(GTA.Vehicle,System.Int32)
+#### Method SE.Vehicle.SetVehicleLivery2(GTA.Vehicle,System.Int32)
 
- Set the current index of livery2 for the vehicle. Livery2 know usage is the roof of the TORNADO5 (Benny's custom) 
+ Set the current index of livery2 for the vehicle. Livery2 known usage is the roof of the TORNADO5 (Benny's custom) 
 
 |Name | Description |
 |-----|------|
-|veh: |Vehicle|
-|liveryNumber: |Livery ID to set to the vehicle|
+|veh |Vehicle|
+|liveryNumber |Livery ID to set to the vehicle|
