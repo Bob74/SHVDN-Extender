@@ -26,7 +26,7 @@ namespace SE
                     return 1;
                 case (uint)PedHash.Trevor:
                     return 2;
-                default: return 0;
+                default: return -1;
             }
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace SE
                         lastname = " Philips";
                     return "Trevor" + lastname;
                 default:
-                    return "???";
+                    return "Unknown";
             }
         }
         /// <summary>
@@ -74,51 +74,6 @@ namespace SE
             }
             return false;
         }
-
-        /// <summary>
-        /// Add cash to the specified player. Use negative value to remove cash.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="player"></param>
-        /// <returns></returns>
-        public static bool AddCashToPlayer(int value, int player)
-        {
-            if (value == 0) return true;
-            if (player == -1)
-            {
-                AddCashToPlayer(value);
-            }
-            else
-            {
-                if (player > 2) return true;
-                else
-                {
-                    int hash = Game.GenerateHash("SP" + player.ToString() + "_TOTAL_CASH");
-
-                    OutputArgument outCurrentCash = new OutputArgument(0);
-                    Function.Call<bool>(Hash.STAT_GET_INT, hash, outCurrentCash, -1);
-                    int currentCash = outCurrentCash.GetResult<int>();
-
-                    if (value < 0)
-                    {
-                        if (currentCash >= value)
-                        {
-                            currentCash += value;
-                            Function.Call<bool>(Hash.STAT_SET_INT, hash, currentCash, 1);   // Remove cash
-                            return true;
-                        }
-                        else return false;
-                    }
-                    else
-                    {
-                        currentCash += value;
-                        Function.Call<bool>(Hash.STAT_SET_INT, hash, currentCash, 1);       // Add cash
-                        return true;
-                    }
-                }
-            }
-            
-            return false;
-        }
+        
     }
 }
