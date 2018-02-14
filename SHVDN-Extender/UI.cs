@@ -156,7 +156,7 @@ namespace SE
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="centre"></param>
-        /// <returns></returns>
+        /// <returns>Pixels coordinates</returns>
         public static Point GetSpriteCoordinatesFromFloat(Image sprite, float x, float y, bool centre = false)
         {
             // Get screen resolution
@@ -175,5 +175,23 @@ namespace SE
             return position;
         }
 
+        /// <summary>
+        /// Return pixels coordinates from float coordinates.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns>Pixels coordinates</returns>
+        public static Point GetScreenCoordinatesFromFloat(float x, float y)
+        {
+            // Get screen resolution
+            OutputArgument outW = new OutputArgument(), outH = new OutputArgument();
+            Function.Call(Hash.GET_SCREEN_RESOLUTION, outW, outH);
+
+            int w = outW.GetResult<int>(), h = outH.GetResult<int>();
+
+            // Adapt to floating point localisation
+            Point position = new Point((int)(x * w), (int)(y * h));
+            return position;
+        }
     }
 }
