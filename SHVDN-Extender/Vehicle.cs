@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using GTA;
 using GTA.Native;
 using GTA.Math;
+using System.Linq;
 
 namespace SE
 {
@@ -126,8 +127,7 @@ namespace SE
         public static bool IsPlayerOfficialVehicle(GTA.Vehicle veh)
         {
             // Michael
-            if (((uint)veh.Model.Hash == (uint)VehicleHash.Tailgater && veh.NumberPlate == "5MDS003 ") ||
-                ((uint)veh.Model.Hash == (uint)VehicleHash.Premier && veh.NumberPlate == "880HS955"))
+            if ((uint)veh.Model.Hash == (uint)VehicleHash.Tailgater && veh.NumberPlate == "5MDS003 ")
                 return true;
 
             // Franklin
@@ -141,7 +141,6 @@ namespace SE
 
             return false;
         }
-
 
         /// <summary>
         /// Spawns a copy of a vehicle.
@@ -267,6 +266,57 @@ namespace SE
         public static void SetVehicleLivery2(GTA.Vehicle veh, int liveryNumber)
         {
             Function.Call((Hash)0xA6D3A8750DC73270, veh, liveryNumber);
+        }
+
+        /// <summary>
+        /// Set the angle of the engines of a vehicle using Vertical Take Off and Landing (ie: HYDRA).
+        /// </summary>
+        /// <param name="veh">Vehicle using Vertical Take Off and Landing</param>
+        /// <param name="angle">Value from 0.0 (engines are horizontal) to 1.0 (engines are vertical)</param>
+        public static void SetVOTLAngle(GTA.Vehicle veh, float angle)
+        {
+            Function.Call((Hash)0x9AA47FFF660CB932, veh, angle);
+        }
+
+        /*
+        public static void Strip(GTA.Vehicle veh, bool doors = true, bool windscreen = true, bool windows = true, bool lights = true, bool wheels = false)
+        {
+            if (doors)
+                foreach (VehicleDoor door in Enum.GetValues(typeof(VehicleDoor)))
+                    veh.BreakDoor(door);
+
+            if (windscreen) Function.Call(Hash._DETACH_VEHICLE_WINDSCREEN, veh);
+
+            if (windows)
+                foreach (VehicleWindow window in Enum.GetValues(typeof(VehicleWindow)))
+                    veh.SmashWindow(window);
+
+            if (lights)
+            {
+                veh.LeftHeadLightBroken = true;
+                veh.RightHeadLightBroken = true;
+            }
+
+            if (wheels)
+            {
+
+            }
+        }
+        */
+
+        /// <summary>
+        /// Check if the plate number is valide. A valid plate number has a maximum of 8 characters containing only digits, letters from A to Z and white spaces.
+        /// </summary>
+        /// <param name="plateNumber">The license plate number to check.</param>
+        /// <returns>True if the number is valid</returns>
+        public static bool IsValidPlateNumber(string plateNumber)
+        {
+            if (plateNumber.Length <= 8)
+            {
+                if (plateNumber.Contains(" ")) plateNumber = plateNumber.Replace(" ", "");
+                return !plateNumber.Any(ch => !Char.IsLetterOrDigit(ch));
+            }
+            else return false;
         }
 
     }

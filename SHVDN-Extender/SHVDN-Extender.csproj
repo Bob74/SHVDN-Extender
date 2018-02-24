@@ -75,6 +75,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Windows.cs" />

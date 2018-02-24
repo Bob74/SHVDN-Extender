@@ -88,7 +88,7 @@ namespace SE
         /// <param name="g"></param>
         /// <param name="b"></param>
         /// <param name="a"></param>
-        public static void DrawText(string text, int font, bool centre, float x, float y, float scale, int r, int g, int b, int a)
+        public static void DrawText(string text, int font = 0, bool centre = true, float x = 0.5f, float y = 0.9f, float scale = 1.0f, int r = 255, int g = 255, int b = 255, int a = 255)
         {
             Function.Call(Hash.SET_TEXT_FONT, font);
             Function.Call(Hash.SET_TEXT_PROPORTIONAL, 0);
@@ -192,6 +192,19 @@ namespace SE
             // Adapt to floating point localisation
             Point position = new Point((int)(x * w), (int)(y * h));
             return position;
+        }
+
+        /// <summary>
+        /// Get the screen resolution.
+        /// </summary>
+        /// <returns>Screen resolution: Size(w, h)</returns>
+        public static Size GetScreenResolution()
+        {
+            OutputArgument outW = new OutputArgument(), outH = new OutputArgument();
+            Function.Call(Hash.GET_SCREEN_RESOLUTION, outW, outH);
+            int w = outW.GetResult<int>(), h = outH.GetResult<int>();
+            
+            return new Size(w, h);
         }
     }
 }
